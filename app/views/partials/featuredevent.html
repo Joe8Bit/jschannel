@@ -1,0 +1,13 @@
+<section id="featured-event" class="row">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<h3><a href="#/events/{{evt.id}}">{{evt.name}}</a></h3>
+				<h4>It's on {{evt.when | date}} and there's only {{evt.buy.availability}} tickets left!</h4>
+			</div>
+			<div class="col-md-3">
+				<a ng-href="{{evt.buy.href}}" class="btn btn-success btn-lg">Buy your tickets now</a>
+			</div>
+		</div>
+	</div>
+</section>

@@ -1,0 +1,15 @@
+<section id="group-slider" class="row">
+	<article ng-repeat="group in groups" class="col-md-3 group-container">
+		<div class="group-slide">
+			<h2><a ng-href="#/groups/{{group.id}}">{{group.name}}</a></h2>
+			<ul ng-show="getEvents(group.id).length">
+				<li ng-repeat="evt in getEvents(group.id)">
+					<h4><a href="#/events/{{evt.id}}">{{evt.name}}</a></h4>
+				</li>
+			</ul>
+			<div class="alert alert-info" role="alert" ng-show="!getEvents(group.id).length">
+				No upcoming events, <a href="">suggest an event?</a>
+			</div>
+		</div>
+	</article>
+</section>

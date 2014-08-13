@@ -1,0 +1,25 @@
+<header class="container header-{{currentPage}}" role="header">
+
+	<navigation></navigation>
+
+</header>
+
+<button type="button" ng-click="filterDistance()" ng-disabled="!hasGeo" class="btn btn-default">Sort by distance from me</button>
+<button type="button" ng-click="filterOnlyUpcoming()" class="btn btn-default">{{onlyUpcoming ? 'Show all events' : 'Show only future events'}}</button>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default" ng-click="filterGroup()">All</button>
+  <button type="button" class="btn btn-default" ng-repeat="group in groups" ng-click="filterGroup(group.id)">{{group.name}}</button>
+</div>
+
+<div class="btn-group">
+  <button type="button" class="btn btn-default" ng-click="filterEventType()">All</button>
+  <button type="button" class="btn btn-default" ng-click="filterEventType('conference')">Only conferences</button>
+  <button type="button" class="btn btn-default" ng-click="filterEventType('meetup')">Only meetups</button>
+</div>
+
+<ul>
+	<li ng-repeat="evt in events">
+		{{evt}}
+	</li>
+</ul>
